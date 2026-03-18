@@ -1,0 +1,25 @@
+  129  cd Lesson_15_opakovani/
+  130  touch slovo.txt
+  131  echo "ahoj" | fold -w1 | nl -w1 -s ";" >slovo.txt 
+  132  cat slovo.txt 
+  133  tr '[:upper:]' '[:lower:]' < slovo.txt > slovo_lower.txt
+  134  cat slovo_lower.txt 
+  135  echo "Ahoj" | fold -w1 | nl -w1 -s ";" >slovo.txt 
+  136  tr '[:upper:]' '[:lower:]' < slovo.txt > slovo_lower.txt
+  137  cat slovo_lower.txt 
+  138  cat slovo.txt 
+  139  sort -t';' -k2,2 slovo_lower.txt > slovo_sorted.txt
+  140  cat slovo_sorted.txt 
+  141  join -t';' -1 2 -2 1 slovo_sorted.txt hlaskovaci_abeceda.txt > spojene.txt
+  142  sort -t';' -k2,2n spojene.txt | cut -d';' -f3
+  143  cat spojene.txt 
+  153  join -t';' -1 1 -2 1 <(sort -t';' -k1,1 sifra.txt) <(sort -t';' -k1,1 alphabet.txt) > krok1.txt
+  163  cat krok1.txt 
+  164  sort -t';' -k2,2n krok1.txt > krok2.txt
+  165  cat krok2.txt 
+  166  cut -d';' -f3 krok2.txt | tr '_' ' ' | tr -d '\n' > vysledek.txt
+  167  cat vysledek.txt 
+  168  cat vysledek.txt 
+  169  nano vysledek.txt 
+  170  history
+  171  history >> history.txt
